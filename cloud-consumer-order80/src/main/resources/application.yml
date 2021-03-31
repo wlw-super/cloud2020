@@ -4,12 +4,11 @@ server:
 spring:
   application:
     name: cloud-consumer-order80
-
-
-mybatis:
-  mapperLocations: classpath:mapper/*.xml
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
-
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1
 
 eureka:
   client:

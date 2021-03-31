@@ -67,8 +67,17 @@ public class OrderController {
         if(CollectionUtils.isEmpty(services))
             return "无可用服务";
 
-        ServiceInstance instance = loadBalancer.instance(discoveryClient.getInstances("CLOUD-PROVIDER-PAYMENT"));
+        ServiceInstance instance = loadBalancer.instance(discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE"));
 
         return restTemplate.getForObject(instance.getUri() + "/payment/lb",String.class);
+    }
+
+
+    // ====================> zipkin+sleuth
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject("http://localhost:8001"+"/payment/zipkin/", String.class);
+        return result;
     }
 }

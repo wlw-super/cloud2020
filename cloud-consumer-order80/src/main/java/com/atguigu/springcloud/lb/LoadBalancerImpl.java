@@ -9,6 +9,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class LoadBalancerImpl implements LoadBalancer {
 
+
+
     private AtomicInteger atomicInteger = new AtomicInteger(0);
 
     private final int getAndIncrement(Integer count){
