@@ -16,6 +16,7 @@
       <module>cloud-consumer-hystrix-dashboard9001</module>
     <module>cloudalibaba-provider-payment9001</module>
       <module>cloudalibaba-sentinel-service8401</module>
+    <module>seata-order-service2001</module>
   </modules>
 
   <packaging>pom</packaging>
